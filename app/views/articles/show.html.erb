@@ -1,0 +1,15 @@
+<h3 class= "mb-3"> <%= @article.title %> </h3>
+
+<h2 class="text-right">
+  <%= link_to('✏️', edit_article_path(@article)) %>
+  <%= link_to('💣', article_path(@article), method: :delete, data: {confirm:'Are you sure?'}) %>
+</h2>
+
+<hr>
+
+<p > <%= @article.content %> </p>
+
+
+<script>
+var simplemde = new SimpleMDE();
+</script>

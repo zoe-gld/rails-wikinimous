@@ -2,14 +2,27 @@
 <html>
   <head>
     <title>RailsWikinimous</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to(' ⇱ Back to homepage', articles_path) %>
+      <%= link_to new_article_path do %>
+        <button class="btn btn-primary my-2 my-sm-0"> New article <i class="fas fa-pen"></i></button>
+      <% end %>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+
   </body>
 </html>
